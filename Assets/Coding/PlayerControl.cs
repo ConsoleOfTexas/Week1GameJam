@@ -22,7 +22,11 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movePlayer();
+        if(!PauseMenu.isPaused)
+        {
+            movePlayer();
+        }
+        //movePlayer();
     }
 
     public void movePlayer()
