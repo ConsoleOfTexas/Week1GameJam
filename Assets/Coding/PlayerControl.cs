@@ -40,13 +40,4 @@ public class PlayerControl : MonoBehaviour
             transform.Translate(movement * speed * Time.deltaTime, Space.World);
         }
     }
-  
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "Wall")
-        {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-        }
-    }
-
 }
