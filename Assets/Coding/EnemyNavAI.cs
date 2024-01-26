@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyNavAI : MonoBehaviour
 {
     public Transform player;
+    public Animator animator;
     private NavMeshAgent agent;
 
     // Start is called before the first frame update
@@ -18,5 +19,6 @@ public class EnemyNavAI : MonoBehaviour
     void Update()
     {
         agent.destination = player.position;
+        animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 }
