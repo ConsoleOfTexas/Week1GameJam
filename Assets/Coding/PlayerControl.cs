@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     public float speed;
     private Vector2 move;
+    public Animator playerAnimator;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -38,6 +39,8 @@ public class PlayerControl : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
 
             transform.Translate(movement * speed * Time.deltaTime, Space.World);
+
+            playerAnimator.SetFloat("Speed", move.magnitude);
         }
     }
 }
